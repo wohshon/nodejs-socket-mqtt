@@ -4,12 +4,14 @@
 
 [deployment instructions] (https://access.redhat.com/documentation/en/red-hat-xpaas/0/red-hat-xpaas-a-mq-image/red-hat-xpaas-a-mq-image)
 
-#### - Prepare key and cert files
+#### 1.1) Prepare key and cert files
 Assumed you have prepared the keystore files (i.e. server.keystore) for the AMQ deployment. Extract the private keys (key.pem) and cert (cert.pem) from the server.keystore in this step:
 
-Use 'password' for all the passwords and passphrases
+(Use 'password' for all the passwords and passphrases if you are using the server.keystore provided seperately)
 
-- Convert to PEM file, broker.pem
+- Convert to PEM file
+
+Use the keystool to convert from jks format to pkcs12 (I don't think we can convert into pem directly??)
 
 ```
 # keytool -importkeystore -srckeystore server.keystore -destkeystore broker.p12  -srcstoretype jks  -deststoretype pkcs12
@@ -24,10 +26,16 @@ Use 'password' for all the passwords and passphrases
 
 # openssl x509 -in broker.pem -out server.pem
 ```
-The pem files will be used in the app
+The pem files will be referenced in the app, just leave it in the root directory of this repo.
 
-## 2) Preparing the app
 
-https://www.npmjs.com/package/mqtt
+## 2) Preparing the app if running for the first time
 
-`# npm install mqtt -g`
+
+`# npm install`
+
+
+## 2) Start the app
+
+`# DEBUG=mqttclient:* npm start`
+
