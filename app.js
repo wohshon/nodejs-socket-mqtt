@@ -49,7 +49,6 @@ var url=amqProtocol+amqHost+":"+amqPort;
 
 
 var index = require('./routes/index');
-var users = require('./routes/users');
 
 //var app = express();
 var app = require('express')();
@@ -114,8 +113,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 //app.use('/js', express.static(__dirname + '/node_modules/mqtt-packet/')); // redirect mqtt.min.js
 app.use('/socket.io', express.static(__dirname + '/node_modules/socket.io-client/dist')); // redirect socket
 app.use('/', index);
-app.post('/connect',index)
-app.use('/users', users);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
