@@ -29,7 +29,7 @@ var amqProtocol="mqtts://";
 var amqUsername='admin';
 var amqPassword='admin';
 var passphasePassword='password';
-var topic="my.topic";
+var topic="mytopic";
 var mqttoptions={
   host: amqHost,
   port: amqPort,
