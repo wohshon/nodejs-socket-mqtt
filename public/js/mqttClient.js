@@ -15,7 +15,7 @@ var mqttClient={
 		});
 		socket.on('gotMessage',function(data){
 			//alert(data.msg);
-			$('#msg').html($('#msg').html()+'</p>'+data.msg);
+			$('#msg').html($('#msg').html()+'<p/><p class="msgbox">'+data.msg+'</p>');
 			//update UI
 		});			
 	}

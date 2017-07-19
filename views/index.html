@@ -45,7 +45,8 @@
 
       <div class="starter-template">
         <h1>Message Dashboard</h1>
-        <p class="lead">Receiving messages from remote AMQ TOPIC</p>
+        <p class="lead">Receiving messages from remote AMQ TOPIC </p>
+        <div id="clr">[ clear messages ]</div>
         <p class="lead" id="msg"></p>
       </div>
 
@@ -59,6 +60,10 @@
      <script src="js/mqttClient.js"></script>
       <script type="text/javascript">
       mqttClient.init();
+      $('#clr').click(function() {
+          $( ".msgbox" ).remove();
+
+      });
     </script>
   </body>
 </html>

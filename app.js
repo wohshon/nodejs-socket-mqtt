@@ -22,14 +22,15 @@ var mqttService  = require('mqtt');
 var key= fs.readFileSync('./key.pem');
 var cert= fs.readFileSync('./server.pem');
 
-//r amqHost='broker-amq-mqtt-ssl-xpaas-amq.cloudapps.demo.com';
-var amqHost='broker-amq-mqtt-ssl-xpaas-amq.cloudapps-ocp34-wohshon.ddns.net';
+//var amqHost='broker-amq-mqtt-ssl-xpaas-amq.cloudapps.demo.com';
+//var amqHost='broker-amq-mqtt-ssl-xpaas-amq.cloudapps-ocp34-wohshon.ddns.net';
+var amqHost='broker-amq-mqtt-ssl-amq.cloudapps-ocp35-wohshon.ddns.net';
 var amqPort=443;
 var amqProtocol="mqtts://";
 var amqUsername='admin';
 var amqPassword='admin';
 var passphasePassword='password';
-var topic="mytopic";
+var topic="test.topic";
 var mqttoptions={
   host: amqHost,
   port: amqPort,
