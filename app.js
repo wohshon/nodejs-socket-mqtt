@@ -20,7 +20,7 @@ var mqttService  = require('mqtt');
 
 //default, or overwrite in the individual methods
 var key= fs.readFileSync('./key.pem');
-var cert= fs.readFileSync('./server.pem');
+var cert= fs.readFileSync('./broker.pem');
 
 //var amqHost='broker-amq-mqtt-ssl-xpaas-amq.cloudapps.demo.com';
 //var amqHost='broker-amq-mqtt-ssl-xpaas-amq.cloudapps-ocp34-wohshon.ddns.net';
