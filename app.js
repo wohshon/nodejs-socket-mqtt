@@ -12,7 +12,7 @@ var bodyParser = require('body-parser');
 var fs = require('fs');
 var options = {
 		  key: fs.readFileSync('./key.pem'),
-		  server: fs.readFileSync('./server.pem')
+		  server: fs.readFileSync('./broker.pem')
 		};
 
 
